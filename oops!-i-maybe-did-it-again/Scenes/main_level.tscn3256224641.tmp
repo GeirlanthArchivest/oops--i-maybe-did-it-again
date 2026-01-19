@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bl4s2o65dexcj"]
+
+[ext_resource type="PackedScene" uid="uid://cga3myayrffbv" path="res://Scenes/player.tscn" id="1_q2fht"]
+[ext_resource type="Texture2D" uid="uid://bmp1vl1wvlpl4" path="res://icon.svg" id="2_ikcpc"]
+[ext_resource type="PackedScene" uid="uid://cxeh5hlakmc6l" path="res://Scenes/building.tscn" id="3_5erdv"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_q2fht"]
+
+[node name="Main Level" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_q2fht")]
+position = Vector2(191, 141)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 325)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(576, 422)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_q2fht")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+scale = Vector2(9.025, 0.075)
+texture = ExtResource("2_ikcpc")
+
+[node name="Building" parent="." instance=ExtResource("3_5erdv")]
+position = Vector2(730, 416)

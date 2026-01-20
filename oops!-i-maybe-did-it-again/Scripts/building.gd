@@ -2,10 +2,14 @@ extends Sprite2D
 
 var health:int
 
+var max_health = 20
+var minimum_health = 5
+var building_health
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	health = 10
-
+	building_health = randf_range(minimum_health, max_health)
+	health = building_health
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float):

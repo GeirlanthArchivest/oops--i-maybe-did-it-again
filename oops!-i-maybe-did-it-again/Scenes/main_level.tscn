@@ -60,9 +60,23 @@ position = Vector2(4, 108.000015)
 scale = Vector2(9.025, 1.745)
 texture = ExtResource("2_ikcpc")
 
-[node name="Building" parent="." instance=ExtResource("3_5erdv")]
+[node name="Buildings" type="Node" parent="."]
+
+[node name="Building" parent="Buildings" instance=ExtResource("3_5erdv")]
 position = Vector2(707, 446)
 scale = Vector2(0.9432954, 1.0118527)
+
+[node name="Sprite2D" parent="Buildings" instance=ExtResource("3_5erdv")]
+position = Vector2(414.00006, 221.00002)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Sprite2D2" parent="Buildings" instance=ExtResource("3_5erdv")]
+position = Vector2(736, 190)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Sprite2D3" parent="Buildings" instance=ExtResource("3_5erdv")]
+position = Vector2(123.00006, 442)
+scale = Vector2(0.99999994, 0.99999994)
 
 [node name="Timer" type="Label" parent="."]
 anchors_preset = 5
@@ -87,3 +101,5 @@ autostart = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_qbrl8")
+
+[connection signal="timeout" from="Timer/Timer" to="." method="_on_timer_timeout"]

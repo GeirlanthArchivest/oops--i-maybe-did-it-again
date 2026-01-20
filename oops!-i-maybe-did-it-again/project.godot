@@ -21,7 +21,8 @@ Global="*res://Scripts/Global.gd"
 
 [global_group]
 
-bullet=""
+"Enemy Damager"=""
+Floor=""
 
 [input]
 

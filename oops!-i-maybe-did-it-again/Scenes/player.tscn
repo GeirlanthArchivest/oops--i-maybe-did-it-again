@@ -17,7 +17,7 @@ scale = Vector2(0.155, 0.19)
 texture = ExtResource("2_cvnsp")
 
 [node name="Fire_rate_timer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.05
 one_shot = true
 autostart = true
 

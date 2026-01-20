@@ -1,4 +1,4 @@
-extends Area2D
+extends Sprite2D
 
 var health:int
 
@@ -8,15 +8,13 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float):
+func _process(_delta: float):
 	pass
 
-
-func _on_body_entered(body: Node2D):
-	if (body.is_in_group("bullet")):
-		if health <= 0:
-			print("dead!")
-			queue_free()
-		else:
-			print("hit!")
+func _on_hitbox_area_entered(area: Area2D):
+	if area.is_in_group("Enemy Damager"):
+		area.get_parent().queue_free()
+		if health >0:
 			health -= 2
+		else:
+			queue_free()

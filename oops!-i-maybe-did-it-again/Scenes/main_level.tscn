@@ -74,16 +74,16 @@ offset_top = -367.0
 offset_right = 580.0
 offset_bottom = -327.0
 
-[node name="Spawnpoints" type="Node" parent="Camera2D"]
+[node name="Spawnpoints" type="Node2D" parent="Camera2D"]
 
 [node name="Marker2D" type="Marker2D" parent="Camera2D/Spawnpoints" groups=["spawn"]]
-position = Vector2(24, 7)
+position = Vector2(-553, -317)
 
 [node name="Marker2D2" type="Marker2D" parent="Camera2D/Spawnpoints" groups=["spawn"]]
-position = Vector2(322, 7)
+position = Vector2(-255, -317)
 
 [node name="Marker2D3" type="Marker2D" parent="Camera2D/Spawnpoints" groups=["spawn"]]
-position = Vector2(892, 7)
+position = Vector2(315, -317)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." groups=["Floor"]]
 position = Vector2(576, 449)

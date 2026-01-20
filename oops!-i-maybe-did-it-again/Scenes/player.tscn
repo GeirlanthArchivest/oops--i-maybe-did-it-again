@@ -1,22 +1,26 @@
 [gd_scene load_steps=4 format=3 uid="uid://cga3myayrffbv"]
 
 [ext_resource type="Script" uid="uid://doxfloetb5vri" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://bmp1vl1wvlpl4" path="res://icon.svg" id="2_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://dlkgrlqetitvk" path="res://Assets/Character.png" id="2_cvnsp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
+radius = 9.0
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
+scale = Vector2(3, 3)
 script = ExtResource("1_cvnsp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_cvnsp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.155, 0.19)
+position = Vector2(-1, -2)
+scale = Vector2(0.045, 0.055)
 texture = ExtResource("2_cvnsp")
 
 [node name="Fire_rate_timer" type="Timer" parent="."]
+wait_time = 0.25
 one_shot = true
 autostart = true
 

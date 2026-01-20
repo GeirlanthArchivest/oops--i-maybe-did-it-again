@@ -20,13 +20,7 @@ func _on_missile_timer_timeout() -> void:
 	var missile = missile_path.instantiate()
 	add_child(missile)
 	
-	var area = $Camera2D/SpawnArea
-	var random_offset = Vector2(randf_range(0, area.size.x), randf_range(0, area.size.y))
-	missile.global_position = area.global_position + random_offset
+	var nodes = get_tree().get_nodes_in_group("spawn")
+	var node = nodes[randf_range(0,nodes.size())]
 	
-	#
-	#var nodes = get_tree().get_nodes_in_group("spawn")
-	#var node = nodes[randi() % nodes.size()]
-	#
-	#$Spawn.position = node.position
-	#print($Spawn.position)
+	missile.global_position = node.global_position

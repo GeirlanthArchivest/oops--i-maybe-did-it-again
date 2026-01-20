@@ -74,6 +74,17 @@ offset_top = -367.0
 offset_right = 580.0
 offset_bottom = -327.0
 
+[node name="Spawnpoints" type="Node" parent="Camera2D"]
+
+[node name="Marker2D" type="Marker2D" parent="Camera2D/Spawnpoints" groups=["spawn"]]
+position = Vector2(24, 7)
+
+[node name="Marker2D2" type="Marker2D" parent="Camera2D/Spawnpoints" groups=["spawn"]]
+position = Vector2(322, 7)
+
+[node name="Marker2D3" type="Marker2D" parent="Camera2D/Spawnpoints" groups=["spawn"]]
+position = Vector2(892, 7)
+
 [node name="StaticBody2D" type="StaticBody2D" parent="." groups=["Floor"]]
 position = Vector2(576, 449)
 collision_layer = 3

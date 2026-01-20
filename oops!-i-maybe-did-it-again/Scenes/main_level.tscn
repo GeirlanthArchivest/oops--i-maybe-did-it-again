@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bl4s2o65dexcj"]
+[gd_scene load_steps=8 format=3 uid="uid://bl4s2o65dexcj"]
 
 [ext_resource type="PackedScene" uid="uid://cga3myayrffbv" path="res://Scenes/player.tscn" id="1_q2fht"]
+[ext_resource type="Script" uid="uid://bwbexyf651e5r" path="res://Scripts/Level.gd" id="1_qbrl8"]
 [ext_resource type="Texture2D" uid="uid://bmp1vl1wvlpl4" path="res://icon.svg" id="2_ikcpc"]
 [ext_resource type="PackedScene" uid="uid://cxeh5hlakmc6l" path="res://Scenes/building.tscn" id="3_5erdv"]
 
@@ -31,7 +32,14 @@ func _process(delta: float) -> void:
 	pass
 "
 
+[sub_resource type="Environment" id="Environment_qbrl8"]
+background_mode = 3
+glow_enabled = true
+glow_bloom = 0.15
+glow_blend_mode = 0
+
 [node name="Main Level" type="Node2D"]
+script = ExtResource("1_qbrl8")
 
 [node name="Player" parent="." instance=ExtResource("1_q2fht")]
 position = Vector2(191, 141)
@@ -76,3 +84,6 @@ script = SubResource("GDScript_5erdv")
 wait_time = 300.0
 one_shot = true
 autostart = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qbrl8")

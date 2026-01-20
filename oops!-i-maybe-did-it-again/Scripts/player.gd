@@ -1,15 +1,14 @@
 extends CharacterBody2D
 
-var bullet_path=preload("res://Scenes/bullet.tscn")
-
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+var bullet = preload("res://Scenes/bullet.tscn")
+var can_shoot = true
 
 func _physics_process(delta: float) -> void:
-	#bullet stuff
-	look_at(get_global_mouse_position())
-	if Input.is_action_just_pressed("shoot"):
+	#shooting stuff
+	if Input.is_action_pressed("shoot")  and Global.node_creation_parent != null and can_shoot:
 		fire()
 	
 	# Add the gravity.
@@ -31,8 +30,10 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func fire():
-	var bullet=bullet_path.instantiate()
-	bullet.dir=rotation
-	bullet.pos=$Node2D.global_position
-	bullet.rot=global_rotation
-	get_parent().add_child(bullet)
+	Global.instance_node(bullet, global_position, Global.node_creation_parent)
+	$Fire_rate_timer.start()
+	can_shoot = false
+
+
+func _on_fire_rate_timer_timeout():
+	can_shoot = true

@@ -1,12 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bl4s2o65dexcj"]
+[gd_scene load_steps=8 format=3 uid="uid://bl4s2o65dexcj"]
 
 [ext_resource type="PackedScene" uid="uid://cga3myayrffbv" path="res://Scenes/player.tscn" id="1_q2fht"]
 [ext_resource type="Script" uid="uid://bwbexyf651e5r" path="res://Scripts/Level.gd" id="1_qbrl8"]
 [ext_resource type="Texture2D" uid="uid://bmp1vl1wvlpl4" path="res://icon.svg" id="2_ikcpc"]
 [ext_resource type="PackedScene" uid="uid://cxeh5hlakmc6l" path="res://Scenes/building.tscn" id="3_5erdv"]
-[ext_resource type="PackedScene" uid="uid://ck23dh4h25osh" path="res://Scenes/missile.tscn" id="5_a2ia3"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_q2fht"]
 
 [sub_resource type="GDScript" id="GDScript_5erdv"]
 script/source = "extends Label
@@ -33,6 +30,8 @@ func _process(_delta: float) -> void:
 	pass
 "
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_q2fht"]
+
 [sub_resource type="Environment" id="Environment_qbrl8"]
 background_mode = 3
 glow_enabled = true
@@ -46,8 +45,52 @@ script = ExtResource("1_qbrl8")
 position = Vector2(191, 141)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
 position = Vector2(577, 324)
+
+[node name="Spawnpoint1" type="Node2D" parent="Camera2D" groups=["spawn"]]
+position = Vector2(-501, -324)
+
+[node name="Spawnpoint2" type="Node2D" parent="Camera2D" groups=["spawn"]]
+position = Vector2(-358, -324)
+
+[node name="Spawnpoint3" type="Node2D" parent="Camera2D" groups=["spawn"]]
+position = Vector2(-179, -324)
+
+[node name="Spawnpoint4" type="Node2D" parent="Camera2D" groups=["spawn"]]
+position = Vector2(-37, -324)
+
+[node name="Spawnpoint5" type="Node2D" parent="Camera2D" groups=["spawn"]]
+position = Vector2(106, -324)
+
+[node name="Spawnpoint6" type="Node2D" parent="Camera2D" groups=["spawn"]]
+position = Vector2(285, -324)
+
+[node name="Spawnpoint7" type="Node2D" parent="Camera2D" groups=["spawn"]]
+position = Vector2(409, -324)
+
+[node name="Spawnpoint8" type="Node2D" parent="Camera2D" groups=["spawn"]]
+position = Vector2(588, -324)
+
+[node name="Timer" type="Label" parent="Camera2D"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_top = -322.0
+offset_right = -63.0
+offset_bottom = -299.0
+grow_horizontal = 2
+scale = Vector2(3.135, 1)
+size_flags_horizontal = 8
+text = "fuck"
+autowrap_mode = 2
+uppercase = true
+script = SubResource("GDScript_5erdv")
+
+[node name="Timer" type="Timer" parent="Camera2D/Timer"]
+wait_time = 300.0
+one_shot = true
+autostart = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." groups=["Floor"]]
 position = Vector2(576, 449)
@@ -61,27 +104,6 @@ shape = SubResource("WorldBoundaryShape2D_q2fht")
 position = Vector2(4, 108.000015)
 scale = Vector2(9.025, 1.745)
 texture = ExtResource("2_ikcpc")
-
-[node name="Timer" type="Label" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 513.0
-offset_top = 2.0
-offset_right = 514.0
-offset_bottom = 25.0
-grow_horizontal = 2
-scale = Vector2(3.135, 1)
-size_flags_horizontal = 8
-text = "fuck"
-autowrap_mode = 2
-uppercase = true
-script = SubResource("GDScript_5erdv")
-
-[node name="Timer" type="Timer" parent="Timer"]
-wait_time = 300.0
-one_shot = true
-autostart = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_qbrl8")
@@ -103,7 +125,10 @@ position = Vector2(833, 448)
 [node name="Building5" parent="Buildings" instance=ExtResource("3_5erdv")]
 position = Vector2(1088, 448)
 
-[node name="Missile" parent="." instance=ExtResource("5_a2ia3")]
-position = Vector2(1148, -9)
+[node name="Spawn" type="Node2D" parent="."]
 
-[connection signal="timeout" from="Timer/Timer" to="." method="_on_timer_timeout"]
+[node name="Missile Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Camera2D/Timer/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Missile Timer" to="." method="_on_missile_timer_timeout"]

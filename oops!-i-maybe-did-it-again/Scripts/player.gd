@@ -6,6 +6,8 @@ const JUMP_VELOCITY = -400.0
 var bullet = preload("res://Scenes/bullet.tscn")
 var can_shoot = true
 
+@onready var sprite = $Sprite2D
+
 func _physics_process(delta: float) -> void:
 	#shooting stuff
 	if Input.is_action_pressed("shoot")  and Global.node_creation_parent != null and can_shoot:

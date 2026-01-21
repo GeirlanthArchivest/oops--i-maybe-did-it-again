@@ -11,7 +11,7 @@ scale = Vector2(0.15530735, 0.15530735)
 texture = ExtResource("1_1g1yv")
 script = ExtResource("2_u28tq")
 
-[node name="Hitbox" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="." groups=["Missile"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(-14, -5)

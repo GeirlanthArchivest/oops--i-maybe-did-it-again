@@ -77,7 +77,13 @@ position = Vector2(-553, -317)
 position = Vector2(-255, -317)
 
 [node name="Marker2D3" type="Marker2D" parent="Camera2D/Spawnpoints" groups=["spawn"]]
-position = Vector2(315, -317)
+position = Vector2(251, -317)
+
+[node name="Marker2D4" type="Marker2D" parent="Camera2D/Spawnpoints" groups=["spawn"]]
+position = Vector2(549, -317)
+
+[node name="Marker2D5" type="Marker2D" parent="Camera2D/Spawnpoints" groups=["spawn"]]
+position = Vector2(-5, -317)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." groups=["Floor"]]
 position = Vector2(576, 449)

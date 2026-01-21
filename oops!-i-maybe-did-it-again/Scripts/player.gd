@@ -5,11 +5,14 @@ const JUMP_VELOCITY = -400.0
 
 var bullet = preload("res://Scenes/bullet.tscn")
 var can_shoot = true
+var health:int
+var max_health = 10
 
 @onready var sprite = $Sprite2D
 
 func _ready():
 	Global.player = self
+	health = max_health
 	
 func _exit_tree():
 	Global.player = null
@@ -50,3 +53,16 @@ func fire():
 
 func _on_fire_rate_timer_timeout():
 	can_shoot = true
+
+func _on_hitbox_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+	if area.is_in_group("Missile"):
+		if health >0:
+			health -= 2
+			print(health)
+		elif health <=0:
+			death()
+	
+func death():
+	print("You Died")
+	get_tree().reload_current_scene()
+	

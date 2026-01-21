@@ -16,7 +16,7 @@ layout_mode = 0
 offset_right = 1149.0
 offset_bottom = 248.0
 theme_override_font_sizes/font_size = 126
-text = "Oops! I Maybe Did It Again"
+text = "Oops! I Perhaps Did It Again"
 horizontal_alignment = 1
 autowrap_mode = 2
 

@@ -13,6 +13,7 @@ var max_health = 10
 func _ready():
 	Global.player = self
 	health = max_health
+	$ProgressBar.max_value = max_health
 	
 func _exit_tree():
 	Global.player = null

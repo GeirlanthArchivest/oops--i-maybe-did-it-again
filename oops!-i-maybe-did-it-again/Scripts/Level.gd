@@ -4,14 +4,18 @@ var building = preload("res://Scenes/building.tscn")
 var missile_path = preload("res://Scenes/missile.tscn")
 @onready var camera = $Camera2D
 
+
 func _ready():
 	Global.node_creation_parent = self
+	Global.numOfBuildings = get_tree().get_nodes_in_group("building")
 	
 func _exit_tree():
 	Global.node_creation_parent = null
 
 func _process(_delta: float) -> void:
 	camera.position = Global.player.global_position
+	if Global.numOfBuildings.is_empty():
+		get_tree().change_scene_to_file("res://Scenes/win_screen.tscn")
 	
 func _on_timer_timeout() -> void:
 	get_tree().reload_current_scene()

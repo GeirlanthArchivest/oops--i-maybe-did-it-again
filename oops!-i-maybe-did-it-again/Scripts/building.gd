@@ -21,4 +21,7 @@ func _on_hitbox_area_entered(area: Area2D):
 		if health >0:
 			health -= 2
 		else:
+			var index = Global.numOfBuildings.find(self,0)
+			Global.numOfBuildings.remove_at(index)
+			print(Global.numOfBuildings)
 			queue_free()

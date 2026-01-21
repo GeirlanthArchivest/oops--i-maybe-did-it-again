@@ -2,6 +2,7 @@ extends Node
 
 var node_creation_parent = null
 var player = null
+var numOfBuildings = []
 
 func instance_node(node, location, parent):
 	var node_instance = node.instantiate()

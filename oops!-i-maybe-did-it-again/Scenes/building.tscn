@@ -5,7 +5,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uj2qm"]
 
-[node name="Building" type="Sprite2D"]
+[node name="Building" type="Sprite2D" groups=["building"]]
 texture = ExtResource("1_avus0")
 offset = Vector2(0, -64.38)
 script = ExtResource("1_uj2qm")

@@ -4,6 +4,7 @@ var node_creation_parent = null
 var player = null
 var numOfBuildings = []
 var win:bool
+var scene_to_change_too = ""
 
 func scene_change():
 	get_tree().change_scene_to_file("res://Scenes/win_screen.tscn")

@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bb21mnphrjhvp"]
+[gd_scene load_steps=2 format=3 uid="uid://bb21mnphrjhvp"]
+
+[ext_resource type="Script" uid="uid://cexyl3q25cbke" path="res://Scripts/start_menu.gd" id="1_juhg0"]
 
 [node name="Start menu" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_juhg0")
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 0
@@ -17,7 +20,7 @@ text = "Oops! I Maybe Did It Again"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="MenuButton" type="MenuButton" parent="."]
+[node name="Startbutton" type="MenuButton" parent="."]
 layout_mode = 0
 offset_left = 469.0
 offset_top = 399.0
@@ -25,3 +28,15 @@ offset_right = 695.0
 offset_bottom = 471.0
 theme_override_font_sizes/font_size = 76
 text = "Start"
+
+[node name="Quitbutton" type="MenuButton" parent="."]
+layout_mode = 0
+offset_left = 471.0
+offset_top = 512.0
+offset_right = 674.0
+offset_bottom = 625.0
+theme_override_font_sizes/font_size = 76
+text = "Quit"
+
+[connection signal="pressed" from="Startbutton" to="." method="_on_startbutton_pressed"]
+[connection signal="pressed" from="Quitbutton" to="." method="_on_quitbutton_pressed"]

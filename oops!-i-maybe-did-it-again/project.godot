@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Oops! I Maybe Did It Again"
-run/main_scene="uid://bl4s2o65dexcj"
+run/main_scene="uid://bb21mnphrjhvp"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

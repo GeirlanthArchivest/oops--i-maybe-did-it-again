@@ -18,6 +18,8 @@ func _exit_tree():
 	Global.player = null
 
 func _physics_process(delta: float) -> void:
+	$ProgressBar.value = health
+	
 	#shooting stuff
 	if Input.is_action_pressed("shoot")  and Global.node_creation_parent != null and can_shoot:
 		fire()

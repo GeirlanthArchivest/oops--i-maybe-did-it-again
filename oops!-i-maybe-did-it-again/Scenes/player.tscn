@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cga3myayrffbv"]
+[gd_scene load_steps=6 format=3 uid="uid://cga3myayrffbv"]
 
 [ext_resource type="Script" uid="uid://doxfloetb5vri" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dlkgrlqetitvk" path="res://Assets/Character.png" id="2_cvnsp"]
@@ -8,6 +8,14 @@ radius = 9.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6t5aa"]
 radius = 9.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvnsp"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 20
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 2
@@ -31,6 +39,16 @@ autostart = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("CapsuleShape2D_6t5aa")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -15.333332
+offset_top = -23.0
+offset_right = 16.0
+offset_bottom = -16.666668
+theme_override_styles/fill = SubResource("StyleBoxFlat_cvnsp")
+max_value = 10.0
+value = 10.0
+show_percentage = false
 
 [connection signal="timeout" from="Fire_rate_timer" to="." method="_on_fire_rate_timer_timeout"]
 [connection signal="area_shape_entered" from="Hitbox" to="." method="_on_hitbox_area_shape_entered"]

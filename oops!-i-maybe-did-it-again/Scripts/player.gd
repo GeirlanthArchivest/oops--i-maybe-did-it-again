@@ -60,9 +60,6 @@ func _on_hitbox_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index
 			health -= 2
 			print(health)
 		elif health <=0:
-			death()
-	
-func death():
-	print("You Died")
-	get_tree().reload_current_scene()
+			Global.win = false
+			Global.scene_change()
 	

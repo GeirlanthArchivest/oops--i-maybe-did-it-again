@@ -15,10 +15,12 @@ func _exit_tree():
 func _process(_delta: float) -> void:
 	camera.position = Global.player.global_position
 	if Global.numOfBuildings.is_empty():
-		get_tree().change_scene_to_file("res://Scenes/win_screen.tscn")
+		Global.win = true
+		Global.scene_change()
 	
 func _on_timer_timeout() -> void:
-	get_tree().reload_current_scene()
+	Global.win = false
+	Global.scene_change()
 
 func _on_missile_timer_timeout() -> void:
 	var missile = missile_path.instantiate()

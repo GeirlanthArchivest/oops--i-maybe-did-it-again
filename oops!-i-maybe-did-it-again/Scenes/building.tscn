@@ -1,13 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://cxeh5hlakmc6l"]
 
-[ext_resource type="Texture2D" uid="uid://bmp1vl1wvlpl4" path="res://icon.svg" id="1_avus0"]
+[ext_resource type="Texture2D" uid="uid://c4xvp6hy8ihf1" path="res://Assets/Building 3.png" id="1_amr18"]
 [ext_resource type="Script" uid="uid://638bm024pnig" path="res://Scripts/building.gd" id="1_uj2qm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uj2qm"]
+size = Vector2(47.775387, 81.99521)
 
 [node name="Building" type="Sprite2D" groups=["building"]]
-texture = ExtResource("1_avus0")
-offset = Vector2(0, -64.38)
+texture = ExtResource("1_amr18")
+offset = Vector2(0, -182)
 script = ExtResource("1_uj2qm")
 
 [node name="Hitbox" type="Area2D" parent="."]
@@ -16,7 +17,8 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, -10.022915)
+position = Vector2(1.0316956, -41.02051)
+scale = Vector2(1, 0.99999976)
 shape = SubResource("RectangleShape2D_uj2qm")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

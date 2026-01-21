@@ -10,6 +10,9 @@ var building_texture1 = preload("res://Assets/Building 1.png")
 var building_texture2 = preload("res://Assets/Building 2.png")
 var building_texture3 = preload("res://Assets/Building 3.png")
 
+var collision_sizes_x:int
+var collision_sizes_y:int
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	building_health = randf_range(minimum_health, max_health)
@@ -31,7 +34,7 @@ func _on_hitbox_area_entered(area: Area2D):
 			queue_free()
 
 func building_asset():
-	var building_asset_pick = randi_range(-1,4)
+	var building_asset_pick = randi_range(-1,3)
 	if building_asset_pick == 0:
 		texture = building_texture1
 		offset.y = -300

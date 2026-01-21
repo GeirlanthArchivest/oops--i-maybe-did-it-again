@@ -17,6 +17,8 @@ func _process(_delta: float) -> void:
 	if Global.numOfBuildings.is_empty():
 		Global.win = true
 		Global.scene_change()
+	else:
+		$Camera2D/Label.text = ("Remaining Buiildings:" + str(Global.numOfBuildings.size()))
 	
 func _on_timer_timeout() -> void:
 	Global.win = false

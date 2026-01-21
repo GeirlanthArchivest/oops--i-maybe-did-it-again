@@ -18,9 +18,10 @@ glow_blend_mode = 0
 script = ExtResource("1_qbrl8")
 
 [node name="Player" parent="." instance=ExtResource("1_q2fht")]
-position = Vector2(191, 141)
+position = Vector2(191, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+z_index = 2
 position = Vector2(577, 324)
 
 [node name="Timer" type="Label" parent="Camera2D"]
@@ -34,6 +35,8 @@ offset_bottom = -299.0
 grow_horizontal = 2
 scale = Vector2(3.135, 1)
 size_flags_horizontal = 8
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 text = "fuck"
 autowrap_mode = 2
 uppercase = true
@@ -60,6 +63,18 @@ position = Vector2(549, -317)
 
 [node name="Marker2D5" type="Marker2D" parent="Camera2D/Spawnpoints" groups=["spawn"]]
 position = Vector2(-5, -317)
+
+[node name="Label" type="Label" parent="Camera2D"]
+offset_left = -573.0
+offset_top = -325.0
+offset_right = -308.0
+offset_bottom = -276.0
+size_flags_horizontal = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+autowrap_mode = 2
+uppercase = true
+metadata/_edit_use_anchors_ = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." groups=["Floor"]]
 position = Vector2(576, 449)

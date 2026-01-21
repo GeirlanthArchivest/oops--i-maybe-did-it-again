@@ -31,9 +31,9 @@ text = "Start"
 
 [node name="Quitbutton" type="MenuButton" parent="."]
 layout_mode = 0
-offset_left = 471.0
+offset_left = 478.0
 offset_top = 512.0
-offset_right = 674.0
+offset_right = 681.0
 offset_bottom = 625.0
 theme_override_font_sizes/font_size = 76
 text = "Quit"

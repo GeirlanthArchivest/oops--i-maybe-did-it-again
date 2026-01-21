@@ -7,6 +7,9 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_l5sol")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
 [node name="Win Screen" type="Control" parent="."]
 visible = false
 anchors_preset = 0
@@ -18,9 +21,6 @@ offset_bottom = 648.0
 theme_override_font_sizes/font_size = 226
 text = "YOU WIN"
 uppercase = true
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(576, 324)
 
 [node name="Lose Screen" type="Control" parent="."]
 visible = false

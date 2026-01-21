@@ -4,31 +4,7 @@
 [ext_resource type="Script" uid="uid://bwbexyf651e5r" path="res://Scripts/Level.gd" id="1_qbrl8"]
 [ext_resource type="Texture2D" uid="uid://bmp1vl1wvlpl4" path="res://icon.svg" id="2_ikcpc"]
 [ext_resource type="PackedScene" uid="uid://cxeh5hlakmc6l" path="res://Scenes/building.tscn" id="3_5erdv"]
-
-[sub_resource type="GDScript" id="GDScript_5erdv"]
-script/source = "extends Label
-
-var minutes:int
-
-var seconds:int
-
-var time:float
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	time = round($Timer.time_left)
-	
-	minutes = (time/60)
-	seconds = fmod(time,60)
-	
-	$\".\".text = str(minutes) + \":\" + str(seconds)
-	pass
-"
+[ext_resource type="Script" uid="uid://ck31exw3j2snv" path="res://Scripts/Countdown Timer.gd" id="3_a2ia3"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_q2fht"]
 
@@ -61,7 +37,7 @@ size_flags_horizontal = 8
 text = "fuck"
 autowrap_mode = 2
 uppercase = true
-script = SubResource("GDScript_5erdv")
+script = ExtResource("3_a2ia3")
 
 [node name="Timer" type="Timer" parent="Camera2D/Timer"]
 wait_time = 120.0

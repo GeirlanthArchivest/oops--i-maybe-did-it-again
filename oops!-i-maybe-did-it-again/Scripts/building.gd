@@ -28,12 +28,10 @@ func _on_hitbox_area_entered(area: Area2D):
 		else:
 			var index = Global.numOfBuildings.find(self,0)
 			Global.numOfBuildings.remove_at(index)
-			print(Global.numOfBuildings)
 			queue_free()
 
 func building_asset():
 	var building_asset_pick = randi_range(-1,4)
-	print(building_asset_pick)
 	if building_asset_pick == 0:
 		texture = building_texture1
 		offset.y = -300

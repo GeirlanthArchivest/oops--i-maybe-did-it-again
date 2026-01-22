@@ -38,7 +38,7 @@ offset_bottom = -268.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 1
+theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 30
 script = ExtResource("3_a2ia3")
 
@@ -70,7 +70,7 @@ offset_right = -308.0
 offset_bottom = -276.0
 size_flags_horizontal = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 1
+theme_override_constants/outline_size = 5
 autowrap_mode = 2
 uppercase = true
 metadata/_edit_use_anchors_ = true

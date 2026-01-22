@@ -17,7 +17,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 corner_detail = 20
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 3
 scale = Vector2(3, 3)
 script = ExtResource("1_cvnsp")

@@ -61,7 +61,8 @@ func _on_hitbox_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index
 	if area.is_in_group("Missile"):
 		if health >0:
 			health -= 2
-		elif health <=0:
+			print(health)
+		if health <=0:
 			Global.win = false
 			Global.scene_change()
 	

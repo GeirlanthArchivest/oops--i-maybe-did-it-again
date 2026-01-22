@@ -23,6 +23,7 @@ Global="*res://Scripts/Global.gd"
 
 "Enemy Damager"=""
 Floor=""
+Player=""
 
 [input]
 

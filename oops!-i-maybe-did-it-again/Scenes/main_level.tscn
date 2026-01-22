@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bl4s2o65dexcj"]
+[gd_scene load_steps=9 format=3 uid="uid://bl4s2o65dexcj"]
 
 [ext_resource type="PackedScene" uid="uid://cga3myayrffbv" path="res://Scenes/player.tscn" id="1_q2fht"]
 [ext_resource type="Script" uid="uid://bwbexyf651e5r" path="res://Scripts/Level.gd" id="1_qbrl8"]
 [ext_resource type="Texture2D" uid="uid://bmp1vl1wvlpl4" path="res://icon.svg" id="2_ikcpc"]
 [ext_resource type="PackedScene" uid="uid://cxeh5hlakmc6l" path="res://Scenes/building.tscn" id="3_5erdv"]
 [ext_resource type="Script" uid="uid://ck31exw3j2snv" path="res://Scripts/Countdown Timer.gd" id="3_a2ia3"]
+[ext_resource type="Texture2D" uid="uid://cum46oyruim86" path="res://Assets/backdrop 1 png.png" id="6_236hc"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_q2fht"]
 
@@ -130,6 +131,17 @@ position = Vector2(3570, 448)
 [node name="Missile Timer" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(2, 1)
+scroll_offset = Vector2(1, 1)
+repeat_size = Vector2(1500, 0)
+repeat_times = 2
+
+[node name="Backdrop1Png" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(696, 274.99994)
+scale = Vector2(0.42873433, 0.5387097)
+texture = ExtResource("6_236hc")
 
 [connection signal="timeout" from="Camera2D/Timer/Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Missile Timer" to="." method="_on_missile_timer_timeout"]

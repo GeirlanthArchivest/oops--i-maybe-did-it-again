@@ -24,7 +24,7 @@ func _on_medium_pressed() -> void:
 	start()
 
 func _on_hard_pressed() -> void:
-	Global.level_time = 60
+	Global.level_time = 30
 	Global.missile_speed = 500
 	Global.missile_time = 0.1
 	start()

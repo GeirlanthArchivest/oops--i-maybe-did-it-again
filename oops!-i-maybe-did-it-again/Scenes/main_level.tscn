@@ -76,16 +76,16 @@ autowrap_mode = 2
 uppercase = true
 metadata/_edit_use_anchors_ = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["Floor"]]
+[node name="Floor" type="StaticBody2D" parent="." groups=["Floor"]]
 position = Vector2(576, 449)
 collision_layer = 3
 collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" groups=["Floor"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" groups=["Floor"]]
 scale = Vector2(9.280002, 7.025512)
 shape = SubResource("WorldBoundaryShape2D_q2fht")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Floor"]
 position = Vector2(4, 108.000015)
 scale = Vector2(9.025, 1.745)
 texture = ExtResource("2_ikcpc")
@@ -113,6 +113,7 @@ position = Vector2(1088, 448)
 [node name="Spawn" type="Node2D" parent="."]
 
 [node name="Missile Timer" type="Timer" parent="."]
+wait_time = 0.5
 autostart = true
 
 [connection signal="timeout" from="Camera2D/Timer/Timer" to="." method="_on_timer_timeout"]

@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://ubvysi6x2b8a"]
+[gd_scene load_steps=6 format=3 uid="uid://ubvysi6x2b8a"]
 
 [ext_resource type="Script" uid="uid://c3sapvei7q7dt" path="res://Scripts/win_screen.gd" id="1_l5sol"]
 [ext_resource type="Texture2D" uid="uid://c6owjlmoseqoq" path="res://Assets/winning screen actual png.png" id="2_awi1s"]
 [ext_resource type="Texture2D" uid="uid://rncp5du426ym" path="res://Assets/Losing Screen png.png" id="3_bwc64"]
+[ext_resource type="Texture2D" uid="uid://8f6ac725f4ao" path="res://Assets/home button png the second.png" id="4_bwc64"]
+[ext_resource type="Texture2D" uid="uid://die85mmr57ta1" path="res://Assets/RESTART BUTTON.png" id="5_85imr"]
 
 [node name="Scene Root" type="Control"]
 layout_mode = 3
@@ -13,13 +15,30 @@ script = ExtResource("1_l5sol")
 position = Vector2(576, 324)
 
 [node name="Win Screen" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 
 [node name="WinningScreenActualPng" type="Sprite2D" parent="Win Screen"]
 position = Vector2(576.00006, 323.99997)
 scale = Vector2(0.32839224, 0.2612903)
 texture = ExtResource("2_awi1s")
+
+[node name="WinHomeButton" type="TextureButton" parent="Win Screen"]
+layout_mode = 0
+offset_left = 971.0
+offset_top = 244.0
+offset_right = 4479.0
+offset_bottom = 2724.0
+scale = Vector2(0.040516343, 0.040516343)
+texture_normal = ExtResource("4_bwc64")
+
+[node name="WinRestartButton" type="TextureButton" parent="Win Screen"]
+layout_mode = 0
+offset_left = 503.0
+offset_top = 487.00003
+offset_right = 4011.0
+offset_bottom = 2967.0
+scale = Vector2(0.03172025, 0.03172025)
+texture_normal = ExtResource("5_85imr")
 
 [node name="Lose Screen" type="Control" parent="."]
 visible = false
@@ -29,3 +48,26 @@ anchors_preset = 0
 position = Vector2(575.99994, 324)
 scale = Vector2(0.32839224, 0.26129034)
 texture = ExtResource("3_bwc64")
+
+[node name="LoseHomeButton" type="TextureButton" parent="Lose Screen"]
+layout_mode = 0
+offset_left = 786.0
+offset_top = 357.0
+offset_right = 4294.0
+offset_bottom = 2837.0
+scale = Vector2(0.040516343, 0.040516343)
+texture_normal = ExtResource("4_bwc64")
+
+[node name="LoseRestartButton" type="TextureButton" parent="Lose Screen"]
+layout_mode = 0
+offset_left = 507.0
+offset_top = 482.0
+offset_right = 4015.0
+offset_bottom = 2962.0
+scale = Vector2(0.03172025, 0.03172025)
+texture_normal = ExtResource("5_85imr")
+
+[connection signal="pressed" from="Win Screen/WinHomeButton" to="." method="_on_win_home_button_pressed"]
+[connection signal="pressed" from="Win Screen/WinRestartButton" to="." method="_on_win_restart_button_pressed"]
+[connection signal="pressed" from="Lose Screen/LoseHomeButton" to="." method="_on_lose_home_button_pressed"]
+[connection signal="pressed" from="Lose Screen/LoseRestartButton" to="." method="_on_lose_restart_button_pressed"]

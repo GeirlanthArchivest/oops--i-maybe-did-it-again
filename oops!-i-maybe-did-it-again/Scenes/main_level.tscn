@@ -43,7 +43,7 @@ uppercase = true
 script = ExtResource("3_a2ia3")
 
 [node name="Timer" type="Timer" parent="Camera2D/Timer"]
-wait_time = 120.0
+wait_time = 60.0
 one_shot = true
 autostart = true
 
@@ -109,6 +109,21 @@ position = Vector2(568, 448)
 
 [node name="Building5" parent="Buildings" instance=ExtResource("3_5erdv")]
 position = Vector2(1088, 448)
+
+[node name="Building6" parent="Buildings" instance=ExtResource("3_5erdv")]
+position = Vector2(1633.5, 448)
+
+[node name="Building7" parent="Buildings" instance=ExtResource("3_5erdv")]
+position = Vector2(2048.5, 445)
+
+[node name="Building8" parent="Buildings" instance=ExtResource("3_5erdv")]
+position = Vector2(2579, 443)
+
+[node name="Building9" parent="Buildings" instance=ExtResource("3_5erdv")]
+position = Vector2(3050, 448)
+
+[node name="Building10" parent="Buildings" instance=ExtResource("3_5erdv")]
+position = Vector2(3570, 448)
 
 [node name="Spawn" type="Node2D" parent="."]
 

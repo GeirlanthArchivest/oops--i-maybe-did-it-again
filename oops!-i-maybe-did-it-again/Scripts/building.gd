@@ -9,6 +9,7 @@ var building_health
 var building_texture1 = preload("res://Assets/Building 1.png")
 var building_texture2 = preload("res://Assets/Building 2.png")
 var building_texture3 = preload("res://Assets/Building 3.png")
+var explosion = preload("res://Scenes/explosion.tscn")
 
 var collision_sizes_x:int
 var collision_sizes_y:int
@@ -26,6 +27,7 @@ func _process(_delta: float):
 func _on_hitbox_area_entered(area: Area2D):
 	if area.is_in_group("Enemy Damager"):
 		area.get_parent().queue_free()
+		Global.instance_node(explosion, area.global_position, Global.node_creation_parent)
 		if health >0:
 			health -= 2
 		if health <=0:

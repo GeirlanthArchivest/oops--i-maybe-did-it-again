@@ -52,27 +52,35 @@ texture = ExtResource("3_m6uer")
 
 [node name="Easy" type="Button" parent="Difficulty"]
 layout_mode = 0
-offset_left = 284.0
-offset_top = 259.0
-offset_right = 292.0
-offset_bottom = 267.0
+offset_left = 235.0
+offset_top = 240.0
+offset_right = 462.0
+offset_bottom = 330.0
 
 [node name="Medium" type="Button" parent="Difficulty"]
 layout_mode = 0
-offset_left = 582.0
-offset_top = 313.0
-offset_right = 590.0
-offset_bottom = 321.0
+offset_left = 496.0
+offset_top = 273.0
+offset_right = 693.0
+offset_bottom = 359.0
 
 [node name="Hard" type="Button" parent="Difficulty"]
 layout_mode = 0
-offset_left = 814.0
-offset_top = 342.0
-offset_right = 822.0
-offset_bottom = 350.0
+offset_left = 723.0
+offset_top = 307.0
+offset_right = 934.0
+offset_bottom = 389.0
+
+[node name="Back" type="Button" parent="Difficulty"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 126.0
+offset_bottom = 92.0
 
 [connection signal="pressed" from="StartMenu/Startbutton" to="." method="_on_startbutton_pressed"]
 [connection signal="pressed" from="StartMenu/Quitbutton" to="." method="_on_quitbutton_pressed"]
 [connection signal="pressed" from="Difficulty/Easy" to="." method="_on_easy_pressed"]
 [connection signal="pressed" from="Difficulty/Medium" to="." method="_on_medium_pressed"]
 [connection signal="pressed" from="Difficulty/Hard" to="." method="_on_hard_pressed"]
+[connection signal="pressed" from="Difficulty/Back" to="." method="_on_back_pressed"]

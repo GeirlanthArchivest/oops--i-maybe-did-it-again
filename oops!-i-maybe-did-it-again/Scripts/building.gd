@@ -34,13 +34,16 @@ func _on_hitbox_area_entered(area: Area2D):
 			queue_free()
 
 func building_asset():
-	var building_asset_pick = randi_range(-1,3)
+	var building_asset_pick = randi_range(0,2)
 	if building_asset_pick == 0:
 		texture = building_texture1
+		$"Hitbox/Small Collision".disabled = true
 		offset.y = -300
 	elif building_asset_pick == 1:
 		texture = building_texture2
+		$"Hitbox/Small Collision".disabled = true
 		offset.y = -300
 	elif building_asset_pick == 2:
 		texture = building_texture3
+		$"Hitbox/Big Collision".disabled = true
 		offset.y = -182

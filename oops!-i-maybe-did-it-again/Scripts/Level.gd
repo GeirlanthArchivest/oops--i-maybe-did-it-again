@@ -8,6 +8,8 @@ var missile_path = preload("res://Scenes/missile.tscn")
 func _ready():
 	Global.node_creation_parent = self
 	Global.numOfBuildings = get_tree().get_nodes_in_group("building")
+	$Camera2D/Timer/Timer.wait_time = Global.level_time
+	$"Missile Timer".wait_time = Global.missile_time
 	
 func _exit_tree():
 	Global.node_creation_parent = null

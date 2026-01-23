@@ -77,6 +77,32 @@ theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 
+[node name="Quick guide" type="Control" parent="Camera2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -273.0
+offset_top = -265.0
+offset_right = 227.0
+offset_bottom = -204.0
+
+[node name="Guide_Label" type="Label" parent="Camera2D/Quick guide"]
+layout_mode = 0
+offset_left = -82.0
+offset_top = -13.0
+offset_right = 626.0
+offset_bottom = 44.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 30
+text = "Hold left click to shoot and destroy the buildings!
+Use A & D or the < & > arrow keys to move!"
+horizontal_alignment = 1
+
+[node name="Guide_Timer" type="Timer" parent="Camera2D/Quick guide"]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
 [node name="Floor" type="StaticBody2D" parent="." groups=["Floor"]]
 position = Vector2(576, 449)
 collision_layer = 3
@@ -144,4 +170,5 @@ scale = Vector2(0.42873433, 0.5387097)
 texture = ExtResource("6_236hc")
 
 [connection signal="timeout" from="Camera2D/TimerLabel/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Camera2D/Quick guide/Guide_Timer" to="." method="_on_guide_timer_timeout"]
 [connection signal="timeout" from="Missile Timer" to="." method="_on_missile_timer_timeout"]

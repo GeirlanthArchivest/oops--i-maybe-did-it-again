@@ -35,3 +35,6 @@ func _on_missile_timer_timeout() -> void:
 	var node = nodes[randf_range(0,nodes.size())]
 	
 	missile.global_position = node.global_position
+
+func _on_guide_timer_timeout() -> void:
+	$"Camera2D/Quick guide".visible = false

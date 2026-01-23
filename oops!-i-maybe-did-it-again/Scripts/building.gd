@@ -27,6 +27,7 @@ func _process(_delta: float):
 func _on_hitbox_area_entered(area: Area2D):
 	if area.is_in_group("Enemy Damager"):
 		area.get_parent().queue_free()
+		Global.explosion_despawn_time = 0.25
 		Global.instance_node(explosion, area.global_position, Global.node_creation_parent)
 		if health >0:
 			health -= 2

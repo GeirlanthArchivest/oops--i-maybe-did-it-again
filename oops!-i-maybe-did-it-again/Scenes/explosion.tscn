@@ -10,6 +10,5 @@ texture = ExtResource("1_aayv4")
 script = ExtResource("2_a801j")
 
 [node name="Explosion Despawn Timer" type="Timer" parent="."]
-autostart = true
 
 [connection signal="timeout" from="Explosion Despawn Timer" to="." method="_on_explosion_despawn_timer_timeout"]

@@ -8,6 +8,7 @@ var scene_to_change_too = ""
 var missile_speed:int
 var level_time:float
 var missile_time:float
+var explosion_despawn_time:float
 
 func scene_change():
 	get_tree().change_scene_to_file("res://Scenes/win_screen.tscn")
